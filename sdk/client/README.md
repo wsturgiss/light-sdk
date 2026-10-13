@@ -384,6 +384,22 @@ LightNfcTapReader(
 )
 ```
 
+### Camera
+
+`LightPhotoCapture` shows a back-camera preview with a shutter button and hands back each photo as an upright JPEG, with its exposure time, ISO and aperture when the camera reports them. It requests the camera permission itself; declare it in `lighttool.toml`:
+
+```toml
+permissions = ["android.permission.CAMERA"]
+```
+
+```kotlin
+LightPhotoCapture(
+    onCaptured = { photo -> onPhoto(photo.jpeg) },
+    onBack = { goBack(Unit) },
+    maxLongEdgePx = 1600, // optional; omit for full resolution
+)
+```
+
 ### Connectivity
 
 `LightConnectivity` lets you query or monitor your device's network connection state. Use `currentStatus`

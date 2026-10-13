@@ -95,6 +95,13 @@ class UiDemoHomeScreen(sealedActivity: SealedLightActivity) :
                                 .padding(vertical = 0.75f.gridUnitsAsDp()),
                         )
                         LightText(
+                            text = "PHOTO CAPTURE",
+                            variant = LightTextVariant.Copy,
+                            modifier = Modifier
+                                .lightClickable { navigateTo(::UiDemoPhotoCaptureScreen) }
+                                .padding(vertical = 0.75f.gridUnitsAsDp()),
+                        )
+                        LightText(
                             text = "MODAL DEMO",
                             variant = LightTextVariant.Copy,
                             modifier = Modifier
